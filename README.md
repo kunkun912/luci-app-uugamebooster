@@ -37,7 +37,7 @@ The plugin ships **no accelerator binary**. On first start it downloads the offi
 
 OpenWrt 19.07 or newer, 22.03+ recommended. The OpenClash split needs nftables, so in practice 22.03+.
 
-Everything else the package pulls in itself: `kmod-tun`, `luci-compat`, `libstdcpp6`, `kmod-ipt-nat`, `ca-bundle`, `unshare`, `ip` and `nftables`. There is nothing to install by hand.
+Everything else the package pulls in itself: `kmod-tun`, `luci-compat`, `libstdcpp6`, `kmod-ipt-nat`, `ca-bundle`, `unshare`, `ip`, `nftables` and `iptables` (the vendor build needs it to boost, and on 22.03+ it resolves to `iptables-nft`). There is nothing to install by hand.
 
 Two things it can't do for you:
 

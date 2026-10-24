@@ -15,7 +15,7 @@ To hand over to this plugin:
 /etc/init.d/uuplugin takeover
 ```
 
-That stops the watchdog first, since otherwise it just respawns the binary. Then it kills any foreign `uuplugin` and removes `/usr/sbin/uu`, `/tmp/uu` and the S99 hook.
+That stops the watchdog first, since otherwise it just respawns the binary. Then it kills any foreign `uuplugin` and removes `/usr/sbin/uu`, `/tmp/uu` and the S99 hook. This plugin's own vendor build in `/opt/uu-oem` is left running, and so is its `S99uuplugin` enable link, which happens to share the official hook's name.
 
 It goes out of its way to avoid `pkill`, for two reasons: busybox's `pkill -x uuplugin` matches nothing even when a process is named exactly that, and `pkill -f uuplugin_monitor.sh` would match the very shell running the command. Both were discovered the hard way.
 
